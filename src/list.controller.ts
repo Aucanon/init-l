@@ -1,6 +1,6 @@
 // 具有单一路由的基本控制器
 
-import { Controller, Get, HttpCode } from '@nestjs/common';
+import { Controller, Get, HttpCode, Post } from '@nestjs/common';
 // import { AppService } from './app.service';
 import { ListService } from './list.service'
 
@@ -13,5 +13,11 @@ export class ListController {
   @HttpCode(200)
   getHello(): string {
     return this.appService.getList();
+  }
+
+  @Post('create')
+  @HttpCode(201)
+  create(): string {
+    return 'createcreate'
   }
 }
